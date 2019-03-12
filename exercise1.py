@@ -5,7 +5,7 @@ import dash_html_components as html
 
 # static data
 weekday_in_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-counts_in_order = {[1, 23], [1, 2]}
+counts_in_order = [[1, 2, 3], [1, 2, 4]]
 # TODO: working on this file to add more codes...
 
 # initialize Dash environment
