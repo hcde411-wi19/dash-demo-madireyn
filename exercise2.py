@@ -15,9 +15,6 @@ app = dash.Dash(__name__, static_folder='static')
 df = pd.read_csv('static/data_car_2004.csv')
 # set layout of the page
 app.layout = html.Div(children=[
-
-    html.H1(children='Scatter Plot'),
-
     # append the visualization to the page
     dcc.Graph(
         id='example-graph',
@@ -33,16 +30,17 @@ app.layout = html.Div(children=[
                     text=df['Vehicle Name'],  # This line sets the vehicle name as the points' labels.
                     marker={
                         'size': 10,
+                        'color': 'rgb(71,49,152)',
                         'opacity': 0.8  # By making the points a bit transparent, it can alleviate the occlusion issue
                     }
                 )
             ],
             'layout': {
-                'title': 'Car Dataset 2004',
+                'title': 'Engine Size vs. City MPG',
                 # It is always a good practice to have axis labels.
                 # This is especially important in this case as the numbers are not trivial
-                'xaxis': {'title': 'Horse Power'},
-                'yaxis': {'title': 'Weight'},
+                'xaxis': {'title': 'Engine Size (l)'},
+                'yaxis': {'title': 'City MPG'},
             }
         }
     )
