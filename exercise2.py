@@ -16,13 +16,7 @@ df = pd.read_csv('static/data_car_2004.csv')
 # set layout of the page
 app.layout = html.Div(children=[
 
-    # set the page heading
     html.H1(children='Scatter Plot'),
-
-    # set the description underneath the heading
-    html.Div(children='''
-        A demo to show a scatter plot.
-    '''),
 
     # append the visualization to the page
     dcc.Graph(
@@ -33,8 +27,8 @@ app.layout = html.Div(children=[
                 # This is how we define a scatter plot. Note that it also uses "go.Scatter",
                 # but with the mode to be only "markers"
                 go.Scatter(
-                    x=df['HP'],
-                    y=df['Weight'],
+                    x=df['Engine Size (l)'],
+                    y=df['City MPG'],
                     mode='markers',
                     text=df['Vehicle Name'],  # This line sets the vehicle name as the points' labels.
                     marker={
